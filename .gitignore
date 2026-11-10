@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.iso
+*.bin
+*.cue
+*.chd
+*.xdelta
+*.partial
+manifest.json
+VERIFICADO.json
+FALLO.json
+
