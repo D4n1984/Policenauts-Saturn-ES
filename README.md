@@ -5,10 +5,10 @@ Parche de traducción al español de España para la edición japonesa de *Polic
 ## Qué necesitas
 
 - Una copia propia del disco 1 japonés, extraída en un archivo CUE y dos archivos BIN.
-- Un ordenador con Windows y PowerShell.
+- Un ordenador con Windows, Linux o macOS. En Linux y macOS se necesitan además xdelta3, chdman y Python 3.
 - Un emulador o dispositivo compatible con imágenes CHD de Sega Saturn.
 
-El parche incluye lo necesario para aplicarlo y **no requiere instalar por separado la traducción inglesa**. Los archivos del juego no están incluidos.
+El paquete incluye las herramientas para Windows y **no requiere instalar por separado la traducción inglesa**. Los archivos del juego no están incluidos.
 
 ## Descargar y aplicar
 
