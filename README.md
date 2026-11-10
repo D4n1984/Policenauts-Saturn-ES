@@ -1,9 +1,23 @@
-# Policenauts para Saturn: traducción al español
+# Policenauts para Sega Saturn en español
 
-La versión 1.0 experimental contiene únicamente la traducción del **disco 1** de la edición japonesa de Sega Saturn. Los discos 2 y 3 no están incluidos. El [parche](parche/README_ES.md) se aplica directamente a una copia propia del disco japonés y genera un CHD con sus dos pistas verificadas; no es necesario instalar el parche inglés por separado.
+Parche de traducción al español de España para la edición japonesa de *Policenauts* de Sega Saturn. La versión actual es experimental y **solo incluye el disco 1**; los discos 2 y 3 todavía no están disponibles.
 
-La traducción es experimental y no se ha comprobado mediante una partida completa. Consulta las instrucciones, la edición compatible y las limitaciones en el [README del parche](parche/README_ES.md).
+## Qué necesitas
 
-Este proyecto se apoya en la traducción inglesa de Policenauts Translation Project; los créditos de sus autores y los de las herramientas utilizadas figuran en la documentación del parche.
+- Una copia propia del disco 1 japonés, extraída en un archivo CUE y dos archivos BIN.
+- Un ordenador con Windows y PowerShell.
+- Un emulador o dispositivo compatible con imágenes CHD de Sega Saturn.
 
-El repositorio no incluye imágenes del juego. `trabajo/` contiene materiales locales de traducción y queda fuera de Git, al igual que imágenes, salidas y archivos temporales. `patcher.py` y `test_patcher.py` son herramientas generales anteriores de aplicación de deltas.
+El parche incluye lo necesario para aplicarlo y **no requiere instalar por separado la traducción inglesa**. Los archivos del juego no están incluidos.
+
+## Descargar y aplicar
+
+1. Descarga el archivo ZIP de la [última versión](https://github.com/D4n1984/Policenauts-Saturn-ES/releases).
+2. Descomprímelo en una carpeta.
+3. Sigue las [instrucciones de aplicación](parche/README_ES.md), también incluidas en el ZIP como `README_ES.md`.
+
+El aplicador genera una imagen CHD en una carpeta nueva y verifica las dos pistas. La versión es experimental: no se ha comprobado una partida completa.
+
+## Créditos
+
+Esta traducción se apoya en el trabajo de Policenauts Translation Project. Los créditos y las licencias de las herramientas se detallan en las [instrucciones del parche](parche/README_ES.md). *Policenauts* es propiedad de Konami; este proyecto de aficionados no está vinculado a la compañía.

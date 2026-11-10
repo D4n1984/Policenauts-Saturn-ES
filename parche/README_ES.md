@@ -1,40 +1,42 @@
-﻿# Policenauts — parche local ES v1.0 (solo disco 1)
+# Policenauts para Sega Saturn — instrucciones del parche
 
-Paquete experimental para aplicar el disco 1 español directamente al volcado japonés de Sega Saturn. No requiere instalar por separado el parche inglés.
+Este parche experimental traduce al español el **disco 1** de la edición japonesa de *Policenauts* para Sega Saturn. Los discos 2 y 3 no están incluidos. No es necesario instalar por separado el parche inglés.
 
-**Versión:** 1.0 ESP. **Incluye solo el disco 1.** La imagen no se ha validado íntegramente en juego; el paquete verifica hashes, pistas y contenedor, pero esto no acredita que todas las escenas, textos y funciones estén comprobados.
+## Requisitos
 
-## Uso en Windows
+- Un ordenador con Windows y PowerShell.
+- Una copia propia del disco 1 japonés, extraída en un CUE y dos BIN situados en la misma carpeta.
+- Una carpeta de salida que todavía no exista y espacio suficiente para la imagen y los archivos de comprobación.
+- Un emulador o dispositivo compatible con imágenes CHD de Sega Saturn.
 
-Mantén juntos el CUE japonés original y sus dos BIN. Se acepta únicamente el Track 1 `MODE1/2352` y Track 2 `AUDIO` que coincidan con estos SHA-256:
+El CUE debe indicar `MODE1/2352` para la pista 1 y `AUDIO` para la pista 2, con `INDEX 00 00:00:00` e `INDEX 01 00:02:00` para esta última. El aplicador acepta la edición cuyos BIN tienen estos SHA-256:
 
-- Track 1: `956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938`
-- Track 2: `4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2`
+| Archivo | SHA-256 |
+| --- | --- |
+| Pista 1 | `956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938` |
+| Pista 2 | `4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2` |
 
-Ejecuta PowerShell con una carpeta de salida nueva:
+## Aplicación
+
+1. Descomprime el paquete y abre PowerShell en la carpeta que contiene `apply_patch.ps1`.
+2. Ejecuta el siguiente comando, sustituyendo las rutas por las de tu CUE y tu carpeta de salida:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\apply_patch.ps1 `
   -CuePath "D:\Policenauts Japan Disc 1\Policenauts (Japan) (Disc 1).cue" `
-  -OutputDirectory "D:\Policenauts_ES_v1.0_Disc1"
+  -OutputDirectory "D:\Policenauts_ES_Disc1"
 ```
 
-El aplicador conserva intactos los archivos fuente. Decodifica el delta, comprueba la pista generada, copia el audio japonés, crea el CHD, ejecuta `chdman verify` y extrae las pistas para verificar sus hashes. Conserva los registros y archivos de verificación en la salida.
+La carpeta de salida debe ser nueva. El aplicador comprueba los archivos originales, aplica el parche y crea un CHD. Después verifica el CHD y compara sus dos pistas con los archivos generados. Los originales no se modifican.
 
-## Revisión incluida
+## Resultado
 
-La ISO cocida objetivo mide 464.152.576 bytes y su SHA-256 es `6e4510fbb70b2d03ec2ce34ece0bb3c289c05e8aead93fca38c0e37850b9a0aa`. El Track 1 raw Mode 1/2352 esperado mide 533.050.224 bytes (226.637 sectores), SHA-256 `14b56dd660a667ba291cc138317ff8e17506ebe1a42e6b62c58f117d7dbf5baf`. El audio japonés se conserva byte a byte. El delta Japón→Español mide 46.980.767 bytes, SHA-256 `207ade8d67f310e430abbea4d1956d6670bac71591ba1eb5951729f36add6784`.
+Abre `Policenauts_ES_v1.0_Disc1.chd` desde tu emulador o dispositivo. La carpeta de salida también contiene el CUE, los BIN, un manifiesto y los archivos utilizados para verificar las pistas.
 
-La aplicación local se completó correctamente. El CHD de comprobación fue verificado y extraído; hash SHA-256 `4125f5799560203a83bbf32ab0a35e1bc9638d284ab4b5b7f04748909f4bb0fb`. No se incluye el CHD ni ninguna imagen de disco en este paquete.
+La traducción no se ha comprobado mediante una partida completa. Conserva tus partidas y, al cambiar de versión, usa preferentemente una partida guardada desde el propio juego: la compatibilidad de los estados rápidos del emulador no está garantizada.
 
-## Herramientas y procedencia
+## Créditos y herramientas
 
-`xdelta3.exe` 3.2.2 procede del release oficial [jmacd/xdelta v3.2.2](https://github.com/jmacd/xdelta/releases/tag/v3.2.2), con licencia Apache 2.0 incluida. `tools\chdman.exe` corresponde a MAME 0.289; se incluyen sus avisos de licencia. Los hashes de herramientas, entradas, salida y parche constan en `provenance.json`.
+La traducción se apoya en el trabajo de Policenauts Translation Project. El parche inglés acredita a GameZelda, FacundoARG, SaturnAR, Raizing y SkyBladeCloud en programación; a Marc Laidlaw, Raizing y cafe-alpha en traducción; y a IlDucci en gráficos.
 
-La salida es experimental y queda pendiente una partida completa y la validación en distintos dispositivos. El paquete no contiene ROM, BIN/CUE, ISO ni CHD del juego.
-
-## Créditos de las aportaciones inglesas de base
-
-El readme original del parche inglés acredita a Policenauts Translation Project; programación: GameZelda, FacundoARG, SaturnAR, Raizing y SkyBladeCloud; traducción: Marc Laidlaw, Raizing y cafe-alpha; gráficos: IlDucci. Esta traducción se basa parcialmente en ese trabajo.
-
-La extracción final del Track 1 se comprobó sector a sector: sincronización y modo, EDC, ECC P y ECC Q válidos en los 226.637 sectores. Al extraer sus 2.048 bytes de datos por sector, la ISO cocida resultante reproduce exactamente el SHA-256 objetivo indicado arriba.
+El paquete incluye [xdelta3 3.2.2](https://github.com/jmacd/xdelta/releases/tag/v3.2.2) y `chdman` de [MAME 0.289](https://github.com/mamedev/mame/tree/mame0289), junto con sus avisos de licencia. Los hashes técnicos del paquete figuran en `provenance.json`.
