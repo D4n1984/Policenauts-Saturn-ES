@@ -4,9 +4,37 @@ __pycache__/
 *.bin
 *.cue
 *.chd
+*.7z
+*.zip
+*.m3u
 *.xdelta
 *.partial
+TEMP/
+temp/
+tmp/
+tmp_*/
+*/TEMP/
+*/temp/
+*/tmp/
+*/tmp_*/
+**/TEMP/
+**/temp/
+**/tmp/
+**/tmp_*/
+trabajo/
+salida/
+salidas/
+output/
+outputs/
+build/
+dist/
 manifest.json
 VERIFICADO.json
 FALLO.json
 
+
+# Limpieza local
+/limpiar_origen.ps1
+
+# Estado local de trabajo
+/WIP.md

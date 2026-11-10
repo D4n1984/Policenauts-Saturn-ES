@@ -1,0 +1,30 @@
+﻿{
+    "state":  "EXPERIMENTAL_ES_V1_0_DISC1_RUNTIME_VALIDATION_REQUIRED",
+    "source_track1_bytes":  524338416,
+    "source_track1_sha256":  "956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938",
+    "source_track2_bytes":  4812192,
+    "source_track2_sha256":  "4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2",
+    "target_cooked_iso_bytes":  464152576,
+    "target_cooked_iso_sha256":  "6e4510fbb70b2d03ec2ce34ece0bb3c289c05e8aead93fca38c0e37850b9a0aa",
+    "target_track1_raw_bytes":  533050224,
+    "target_track1_raw_sha256":  "14b56dd660a667ba291cc138317ff8e17506ebe1a42e6b62c58f117d7dbf5baf",
+    "target_track1_sectors":  226637,
+    "patch":  "disc1_jp_to_es_v1_0.vcdiff",
+    "patch_bytes":  46980767,
+    "patch_sha256":  "207ade8d67f310e430abbea4d1956d6670bac71591ba1eb5951729f36add6784",
+    "xdelta_version":  "3.2.2",
+    "xdelta_exe_sha256":  "732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9",
+    "chdman_version":  "MAME 0.289",
+    "chdman_exe_sha256":  "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
+    "apply_validation":  "Success: exact Japanese CUE accepted; generated raw Track 1 hash matched; Japanese audio copied with exact hash; CHD verify and two-track extraction hash checks passed.",
+    "generated_check_chd_sha256":  "4125f5799560203a83bbf32ab0a35e1bc9638d284ab4b5b7f04748909f4bb0fb",
+    "limitations":  [
+                        "Disc 1 only.",
+                        "Gameplay and dialogue completeness are not established.",
+                        "No game image or CHD is included."
+                    ],
+    "sector_validation":  "Independent post-CHD extraction scan: all 226637 sectors passed sync/mode, EDC, ECC P and ECC Q; extracting 2048 user bytes per sector reproduced target cooked ISO SHA-256 6e4510fbb70b2d03ec2ce34ece0bb3c289c05e8aead93fca38c0e37850b9a0aa.",
+    "xdelta_release_url":  "https://github.com/jmacd/xdelta/releases/tag/v3.2.2",
+    "chdman_source_url":  "https://github.com/mamedev/mame/tree/mame0289",
+    "english_translation_credits":  "Policenauts Translation Project; programming: GameZelda, FacundoARG, SaturnAR, Raizing, SkyBladeCloud; translation: Marc Laidlaw, Raizing, cafe-alpha; graphics: IlDucci."
+}
