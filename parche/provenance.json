@@ -1,30 +1,38 @@
-﻿{
-    "state":  "EXPERIMENTAL_ES_V1_0_DISC1_RUNTIME_VALIDATION_REQUIRED",
-    "source_track1_bytes":  524338416,
-    "source_track1_sha256":  "956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938",
-    "source_track2_bytes":  4812192,
-    "source_track2_sha256":  "4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2",
-    "target_cooked_iso_bytes":  464152576,
-    "target_cooked_iso_sha256":  "6e4510fbb70b2d03ec2ce34ece0bb3c289c05e8aead93fca38c0e37850b9a0aa",
-    "target_track1_raw_bytes":  533050224,
-    "target_track1_raw_sha256":  "14b56dd660a667ba291cc138317ff8e17506ebe1a42e6b62c58f117d7dbf5baf",
-    "target_track1_sectors":  226637,
-    "patch":  "disc1_jp_to_es_v1_0.vcdiff",
-    "patch_bytes":  46980767,
-    "patch_sha256":  "207ade8d67f310e430abbea4d1956d6670bac71591ba1eb5951729f36add6784",
-    "xdelta_version":  "3.2.2",
-    "xdelta_exe_sha256":  "732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9",
-    "chdman_version":  "MAME 0.289",
-    "chdman_exe_sha256":  "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
-    "apply_validation":  "Success: exact Japanese CUE accepted; generated raw Track 1 hash matched; Japanese audio copied with exact hash; CHD verify and two-track extraction hash checks passed.",
-    "generated_check_chd_sha256":  "4125f5799560203a83bbf32ab0a35e1bc9638d284ab4b5b7f04748909f4bb0fb",
-    "limitations":  [
-                        "Disc 1 only.",
-                        "Gameplay and dialogue completeness are not established.",
-                        "No game image or CHD is included."
-                    ],
-    "sector_validation":  "Independent post-CHD extraction scan: all 226637 sectors passed sync/mode, EDC, ECC P and ECC Q; extracting 2048 user bytes per sector reproduced target cooked ISO SHA-256 6e4510fbb70b2d03ec2ce34ece0bb3c289c05e8aead93fca38c0e37850b9a0aa.",
-    "xdelta_release_url":  "https://github.com/jmacd/xdelta/releases/tag/v3.2.2",
-    "chdman_source_url":  "https://github.com/mamedev/mame/tree/mame0289",
-    "english_translation_credits":  "Policenauts Translation Project; programming: GameZelda, FacundoARG, SaturnAR, Raizing, SkyBladeCloud; translation: Marc Laidlaw, Raizing, cafe-alpha; graphics: IlDucci."
+{
+  "version": "1.1",
+  "state": "EXPERIMENTAL_PRERELEASE_RUNTIME_VALIDATION_REQUIRED",
+  "discs": {
+    "1": {
+      "japanese_track1_bytes": 524338416,
+      "japanese_track1_sha256": "956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938",
+      "japanese_cooked_sha256": "516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56",
+      "target_cooked_bytes": 469903360,
+      "target_cooked_sha256": "197f65009239fba7a7d682773c85f9411f440edc88170ce5efcedea838aa6303",
+      "patch": "disc1_jp_to_es_v1_1.vcdiff",
+      "patch_sha256": "59ff2b48fa107c2a2e83ac30ea5516fb3ed123a6ba50798a3cb818cd998ac806"
+    },
+    "2": {
+      "japanese_track1_bytes": 560211120,
+      "japanese_track1_sha256": "053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc",
+      "japanese_cooked_sha256": "1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b",
+      "target_cooked_bytes": 494077952,
+      "target_cooked_sha256": "1b5abe75c6ca11706d378c725ea88cdc32d68cace57288b4be5caa498daef1e8",
+      "patch": "disc2_jp_to_es_v1_1.vcdiff",
+      "patch_sha256": "2f7b2d862695c3ba2f0abc125b6aac6b6cbe119ab0e8b670950c43cc075e32e4"
+    }
+  },
+  "japanese_audio_bytes": 4812192,
+  "japanese_audio_sha256": "4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2",
+  "tool_xdelta3_sha256": "732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9",
+  "tool_chdman_sha256": "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
+  "verification": "Ambos deltas reproducen exactamente las ISO objetivo. Aplicador PowerShell probado con cada disco japonés en Windows; validación CHD y extracción de pistas. Aplicador Python probado en Windows; Linux/macOS pendientes.",
+  "limitations": [
+    "El disco 3 no está incluido.",
+    "No se ha probado el cambio real de disco ni una escena de voces o vídeo del disco 2.",
+    "Voces y vídeos de disco 2 han sido reconstruidos y verificados estáticamente, no validados en el motor.",
+    "Los titulares revisados del disco 1 requieren prueba visual; no se ha completado una partida.",
+    "El menú gráfico conserva el rótulo Ver 1.0 ESP.",
+    "La demo OPDEMO reconstruida se reproduce en una prueba aislada de disco 1; se observaron superposición con 2040 A.D. y texto parcial en la referencia inglesa y en la reconstruida."
+  ],
+  "credits": "Policenauts Translation Project; programación: GameZelda, FacundoARG, SaturnAR, Raizing, SkyBladeCloud; traducción: Marc Laidlaw, Raizing, cafe-alpha; gráficos: IlDucci."
 }
