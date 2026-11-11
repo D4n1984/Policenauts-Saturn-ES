@@ -1,10 +1,10 @@
-# Policenauts para Sega Saturn — parche español 1.1 experimental
+# Policenauts para Sega Saturn — parche español 1.3 experimental
 
-Este paquete traduce los discos 1 y 2 de la edición japonesa de *Policenauts* para Sega Saturn. El disco 3 no está incluido. No es necesario instalar por separado el parche inglés. Se necesita una copia propia de cada disco; los archivos del juego no están incluidos.
+Este paquete traduce los tres discos de la edición japonesa de *Policenauts* para Sega Saturn. No es necesario instalar por separado el parche inglés. Se necesita una copia propia de cada disco; los archivos del juego no están incluidos.
 
-La versión es experimental. El disco 2 contiene voces y vídeos reconstruidos que aún no se han comprobado durante una partida; tampoco se ha probado el juego completo. El cambio de disco, los enlaces del glosario, la sincronía y algunas escenas siguen pendientes de validación. Si encuentras errores, indícanos el disco, la escena y la frase.
+La versión es experimental. Las voces y vídeos reconstruidos de los discos 2 y 3 no se han comprobado durante una partida; tampoco se ha probado el juego completo. Los cambios de disco, los enlaces del glosario, la sincronía y algunas escenas siguen pendientes de validación. Si encuentras errores, indícanos el disco, la escena y la frase.
 
-El gráfico del menú todavía muestra `Ver 1.0 ESP`; la versión del paquete y de los parches es la 1.1.
+El gráfico del menú todavía muestra `Ver 1.0 ESP`; la versión del paquete y de los parches es la 1.3.
 
 En la demostración inicial, un subtítulo puede solaparse con «2040 A.D.» y algunos textos aparecen solo parcialmente; ambos comportamientos también se han observado en una prueba equivalente de la referencia inglesa.
 
@@ -21,7 +21,8 @@ El CUE original debe contener dos pistas separadas, `MODE1/2352` y `AUDIO`; la p
 | --- | --- |
 | Disco 1, pista 1 | `956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938` |
 | Disco 2, pista 1 | `053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc` |
-| Audio de ambos discos | `4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2` |
+| Disco 3, pista 1 | `bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89` |
+| Audio de los tres discos | `4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2` |
 
 ## Aplicación en Windows
 
@@ -33,7 +34,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\apply_patch.ps1 `
   -OutputDirectory "D:\Policenauts_ES_Disc1"
 ```
 
-Para el disco 2, usa `-Disc 2`, la ruta a su CUE y otra carpeta de salida nueva.
+Para los discos 2 y 3, usa `-Disc 2` o `-Disc 3`, la ruta al CUE correspondiente y otra carpeta de salida nueva.
 
 ## Aplicación en Linux y macOS
 
@@ -45,13 +46,13 @@ python3 apply_patch.py --disc 1 \
   --output "/ruta/a/Policenauts_ES_Disc1"
 ```
 
-Para el disco 2, cambia `--disc 1` por `--disc 2`, indica su CUE y una carpeta de salida diferente. Si las herramientas no están en `PATH`, añade `--xdelta /ruta/a/xdelta3` y `--chdman /ruta/a/chdman`. El aplicador de Python se ha probado con los ejecutables de Windows; falta probarlo en Linux y macOS.
+Para los discos 2 y 3, cambia `--disc 1` por `--disc 2` o `--disc 3`, indica su CUE y una carpeta de salida diferente. Si las herramientas no están en `PATH`, añade `--xdelta /ruta/a/xdelta3` y `--chdman /ruta/a/chdman`. El aplicador de Python se ha probado con los ejecutables de Windows; falta probarlo en Linux y macOS.
 
 ## Resultado
 
-El aplicador comprueba los originales, extrae los sectores de datos, aplica el parche, crea un CHD y verifica las dos pistas extrayéndolas de nuevo. Los originales no se modifican. El resultado se llama `Policenauts_ES_v1.1_Disc1.chd` o `Policenauts_ES_v1.1_Disc2.chd`; también se conservan los archivos intermedios y de verificación.
+El aplicador comprueba los originales, extrae los sectores de datos, aplica el parche, crea un CHD y verifica las dos pistas extrayéndolas de nuevo. Los originales no se modifican. Los resultados se llaman `Policenauts_ES_v1.3_Disc1.chd`, `Policenauts_ES_v1.3_Disc2.chd` y `Policenauts_ES_v1.3_Disc3.chd`; también se conservan los archivos intermedios y de verificación.
 
-Configura ambos discos en tu emulador según sus instrucciones para poder cambiarlos cuando el juego lo pida. Conserva tus partidas y usa preferentemente una partida guardada desde el propio juego al cambiar de versión; no se garantiza la compatibilidad de los estados rápidos.
+Configura los tres discos en tu emulador según sus instrucciones para poder cambiarlos cuando el juego lo pida. Conserva tus partidas y usa preferentemente una partida guardada desde el propio juego al cambiar de versión; no se garantiza la compatibilidad de los estados rápidos.
 
 ## Créditos
 

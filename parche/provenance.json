@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.3",
   "state": "EXPERIMENTAL_PRERELEASE_RUNTIME_VALIDATION_REQUIRED",
   "discs": {
     "1": {
@@ -8,7 +8,7 @@
       "japanese_cooked_sha256": "516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56",
       "target_cooked_bytes": 469903360,
       "target_cooked_sha256": "197f65009239fba7a7d682773c85f9411f440edc88170ce5efcedea838aa6303",
-      "patch": "disc1_jp_to_es_v1_1.vcdiff",
+      "patch": "disc1_jp_to_es_v1_3.vcdiff",
       "patch_sha256": "59ff2b48fa107c2a2e83ac30ea5516fb3ed123a6ba50798a3cb818cd998ac806"
     },
     "2": {
@@ -17,22 +17,32 @@
       "japanese_cooked_sha256": "1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b",
       "target_cooked_bytes": 494077952,
       "target_cooked_sha256": "1b5abe75c6ca11706d378c725ea88cdc32d68cace57288b4be5caa498daef1e8",
-      "patch": "disc2_jp_to_es_v1_1.vcdiff",
+      "patch": "disc2_jp_to_es_v1_3.vcdiff",
       "patch_sha256": "2f7b2d862695c3ba2f0abc125b6aac6b6cbe119ab0e8b670950c43cc075e32e4"
+    },
+    "3": {
+      "japanese_track1_bytes": 513533328,
+      "japanese_track1_sha256": "bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89",
+      "japanese_cooked_sha256": "8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f",
+      "target_cooked_bytes": 453435392,
+      "target_cooked_sha256": "fea82d152950336f1abdef9df04c5541b220282de6879e8a117169bb15849903",
+      "patch": "disc3_jp_to_es_v1_3.vcdiff",
+      "patch_sha256": "55e41f679a948b25955ef8bc3dc22cfc75daf08d7f6237adea40946ef73a684a"
     }
   },
   "japanese_audio_bytes": 4812192,
   "japanese_audio_sha256": "4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2",
   "tool_xdelta3_sha256": "732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9",
   "tool_chdman_sha256": "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
-  "verification": "Ambos deltas reproducen exactamente las ISO objetivo. Aplicador PowerShell probado con cada disco japonés en Windows; validación CHD y extracción de pistas. Aplicador Python probado en Windows; Linux/macOS pendientes.",
+  "verification": "Los tres deltas reproducen sus ISO objetivo. Aplicadores PowerShell y Python probados en Windows con el disco 3 japonés, CHD y pistas verificados; Linux y macOS pendientes.",
   "limitations": [
-    "El disco 3 no está incluido.",
-    "No se ha probado el cambio real de disco ni una escena de voces o vídeo del disco 2.",
-    "Voces y vídeos de disco 2 han sido reconstruidos y verificados estáticamente, no validados en el motor.",
-    "Los titulares revisados del disco 1 requieren prueba visual; no se ha completado una partida.",
+    "No se ha probado el cambio de disco ni una partida completa.",
+    "Voces y vídeos de discos 2 y 3 verificados estáticamente, sin validación en juego.",
+    "Los enlaces del glosario y la sincronía requieren prueba en juego.",
+    "Los titulares revisados del disco 1 requieren prueba visual.",
     "El menú gráfico conserva el rótulo Ver 1.0 ESP.",
-    "La demo OPDEMO reconstruida se reproduce en una prueba aislada de disco 1; se observaron superposición con 2040 A.D. y texto parcial en la referencia inglesa y en la reconstruida."
+    "La demo inicial presenta superposición y texto parcial también observados en la referencia inglesa.",
+    "Una frase de voz del disco 3 requiere contraste con la escena o el japonés."
   ],
   "credits": "Policenauts Translation Project; programación: GameZelda, FacundoARG, SaturnAR, Raizing, SkyBladeCloud; traducción: Marc Laidlaw, Raizing, cafe-alpha; gráficos: IlDucci."
 }
