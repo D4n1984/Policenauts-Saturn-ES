@@ -18,6 +18,10 @@ El paquete incluye las herramientas para Windows y no requiere instalar por sepa
 
 El aplicador crea y verifica un CHD para cada disco. El propietario ha completado una partida del disco 1 con la versión anterior; las correcciones recientes, los demás discos, los cambios de disco, las voces, los vídeos y los enlaces requieren más pruebas en juego. La demostración inicial presenta problemas de texto también observados en la referencia inglesa.
 
+## Apoyar el proyecto
+
+Si quieres apoyar el trabajo, puedes hacerlo en [Buy Me a Coffee](https://buymeacoffee.com/danielgarciagarcia).
+
 ## Créditos
 
 Esta traducción se apoya en el trabajo de Policenauts Translation Project. Los créditos y las licencias de las herramientas se detallan en las [instrucciones del parche](parche/README_ES.md). *Policenauts* es propiedad de Konami; este proyecto de aficionados no está vinculado a la compañía.
