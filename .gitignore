@@ -38,3 +38,6 @@ FALLO.json
 
 # Estado local de trabajo
 /WIP.md
+
+# Deltas históricos: las versiones se conservan en Git, no en nombres separados.
+/parche/disc[123]_jp_to_es_v*.vcdiff

@@ -1,6 +1,6 @@
 # Policenauts para Sega Saturn en español
 
-Parche de traducción al español de España para la edición japonesa de *Policenauts* de Sega Saturn. La versión 1.4 es experimental e incluye los **tres discos**.
+Parche de traducción al español de España para la edición japonesa de *Policenauts* de Sega Saturn. La versión 1.5 incluye los **tres discos**.
 
 ## Qué necesitas
 
@@ -12,7 +12,7 @@ El paquete incluye las herramientas para Windows y no requiere instalar por sepa
 
 ## Descargar y aplicar
 
-1. Descarga el ZIP de la [versión experimental 1.4](https://github.com/D4n1984/Policenauts-Saturn-ES/releases/tag/v1.4).
+1. Descarga el ZIP de la [versión 1.5](https://github.com/D4n1984/Policenauts-Saturn-ES/releases/tag/v1.5).
 2. Descomprímelo en una carpeta.
 3. Sigue las [instrucciones de aplicación](parche/README_ES.md), también incluidas en el ZIP como `README_ES.md`.
 

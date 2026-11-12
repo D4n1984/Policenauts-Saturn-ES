@@ -1,40 +1,40 @@
 {
-  "version": "1.4",
-  "state": "EXPERIMENTAL_PRERELEASE_RUNTIME_VALIDATION_REQUIRED",
+  "version": "1.5",
+  "state": "RELEASE",
   "discs": {
     "1": {
       "japanese_track1_bytes": 524338416,
       "japanese_track1_sha256": "956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938",
       "japanese_cooked_sha256": "516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56",
-      "target_cooked_bytes": 476284928,
-      "target_cooked_sha256": "a97c2a5eb68b61c7b2ecebad391d3839f323a2c51bd285a22b8bcb354dc7582f",
-      "patch": "disc1_jp_to_es_v1_4.vcdiff",
-      "patch_sha256": "6420e830aeee4763611f95df5c4b7f9b0486b394840bc87e56fad6c51cab7f5f"
+      "target_cooked_bytes": 476891136,
+      "target_cooked_sha256": "ac3a9271f81e9bed89cfcea3cdf44188d8f4e17006b0d5f1f53473b289c6192d",
+      "patch": "disc1_jp_to_es.vcdiff",
+      "patch_sha256": "c39625ac83360bbbbb462bc21bde8d51807942ba4ca4f7f974c5ff5b945dd008"
     },
     "2": {
       "japanese_track1_bytes": 560211120,
       "japanese_track1_sha256": "053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc",
       "japanese_cooked_sha256": "1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b",
       "target_cooked_bytes": 500459520,
-      "target_cooked_sha256": "5f1d188dd9094f07bbd48457a6a5c1b6dfd230fbd73fd18796580f12cc44d746",
-      "patch": "disc2_jp_to_es_v1_4.vcdiff",
-      "patch_sha256": "cd5f31cf5938cf09864e3672d3035d6790b4931e3669469e5117325d1e724044"
+      "target_cooked_sha256": "56bf3a3153c9a15b5a307d16625702a852c27712f31695aa1b632331fa69aed9",
+      "patch": "disc2_jp_to_es.vcdiff",
+      "patch_sha256": "4de92bd7d5f0bc68b6385b8206a8ddf0ed9d4d45266cf3a802e6e93eb9fb7a53"
     },
     "3": {
       "japanese_track1_bytes": 513533328,
       "japanese_track1_sha256": "bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89",
       "japanese_cooked_sha256": "8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f",
       "target_cooked_bytes": 459819008,
-      "target_cooked_sha256": "d4e90adf3bf5ced46f06f2f837ea653724daf8f47043d4bf67ba3ce06ff18c9d",
-      "patch": "disc3_jp_to_es_v1_4.vcdiff",
-      "patch_sha256": "50ecd43732b8d44becea712cadf81b112f289f4ad481b262be41917940ae1871"
+      "target_cooked_sha256": "70ea53e1c6c88cbc78a256818dcfd29fabfa2d5413056a9215dc08bfcebadc75",
+      "patch": "disc3_jp_to_es.vcdiff",
+      "patch_sha256": "7ac77c29f949c4b6108f063f67e0ab29a61c21dabd83c1d186375e0ec90d9365"
     }
   },
   "japanese_audio_bytes": 4812192,
   "japanese_audio_sha256": "4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2",
   "tool_xdelta3_sha256": "732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9",
   "tool_chdman_sha256": "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
-  "verification": "Los tres deltas reconstruyeron sus ISO objetivo desde las bases japonesas. Ambos aplicadores se ejecutaron en Windows con el disco 2 japonés y verificaron las dos pistas de sus CHD; Linux y macOS siguen pendientes.",
+  "verification": "Los tres deltas reconstruyeron sus ISO objetivo desde las bases japonesas. Los aplicadores PowerShell y Python se ejecutaron en Windows con el disco 1 japonés y verificaron ambas pistas de sus CHD; las escenas modificadas requieren validación en juego.",
   "limitations": [
     "Las escenas revisadas, el menú EMPS, los enlaces y el cambio de disco requieren prueba visual en juego.",
     "La posición de fuente usada para ¡ no aparece en los recursos de texto reconocidos, pero pueden existir usos no identificados.",

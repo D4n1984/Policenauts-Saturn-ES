@@ -1,10 +1,10 @@
-# Policenauts para Sega Saturn — parche español 1.4 experimental
+# Policenauts para Sega Saturn — parche español 1.5
 
 Este paquete traduce los tres discos de la edición japonesa de *Policenauts* para Sega Saturn. No es necesario instalar por separado el parche inglés. Se necesita una copia propia de cada disco; los archivos del juego no están incluidos.
 
-La versión es experimental. El propietario ha completado una partida del disco 1 con la versión anterior; las correcciones recientes y los discos 2 y 3 requieren más pruebas en juego. Los cambios de disco, los enlaces del glosario, la sincronía y algunas escenas siguen pendientes de validación. Si encuentras errores, indícanos el disco, la escena y la frase.
+Las correcciones recientes y los discos 2 y 3 requieren más pruebas en juego. Los cambios de disco, los enlaces del glosario, la sincronía y algunas escenas siguen pendientes de validación. Si encuentras errores, indícanos el disco, la escena y la frase.
 
-El menú muestra `Ver 1.4 ESP`.
+El menú muestra `Ver 1.5 ESP`.
 
 En la demostración inicial, un subtítulo puede solaparse con «2040 A.D.» y algunos textos aparecen solo parcialmente; ambos comportamientos también se han observado en una prueba equivalente de la referencia inglesa.
 
