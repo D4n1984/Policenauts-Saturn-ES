@@ -1,10 +1,10 @@
-# Policenauts para Sega Saturn — parche español 1.3 experimental
+# Policenauts para Sega Saturn — parche español 1.4 experimental
 
 Este paquete traduce los tres discos de la edición japonesa de *Policenauts* para Sega Saturn. No es necesario instalar por separado el parche inglés. Se necesita una copia propia de cada disco; los archivos del juego no están incluidos.
 
-La versión es experimental. Las voces y vídeos reconstruidos de los discos 2 y 3 no se han comprobado durante una partida; tampoco se ha probado el juego completo. Los cambios de disco, los enlaces del glosario, la sincronía y algunas escenas siguen pendientes de validación. Si encuentras errores, indícanos el disco, la escena y la frase.
+La versión es experimental. El propietario ha completado una partida del disco 1 con la versión anterior; las correcciones recientes y los discos 2 y 3 requieren más pruebas en juego. Los cambios de disco, los enlaces del glosario, la sincronía y algunas escenas siguen pendientes de validación. Si encuentras errores, indícanos el disco, la escena y la frase.
 
-El gráfico del menú todavía muestra `Ver 1.0 ESP`; la versión del paquete y de los parches es la 1.3.
+El menú muestra `Ver 1.4 ESP`.
 
 En la demostración inicial, un subtítulo puede solaparse con «2040 A.D.» y algunos textos aparecen solo parcialmente; ambos comportamientos también se han observado en una prueba equivalente de la referencia inglesa.
 
@@ -50,7 +50,7 @@ Para los discos 2 y 3, cambia `--disc 1` por `--disc 2` o `--disc 3`, indica su 
 
 ## Resultado
 
-El aplicador comprueba los originales, extrae los sectores de datos, aplica el parche, crea un CHD y verifica las dos pistas extrayéndolas de nuevo. Los originales no se modifican. Los resultados se llaman `Policenauts_ES_v1.3_Disc1.chd`, `Policenauts_ES_v1.3_Disc2.chd` y `Policenauts_ES_v1.3_Disc3.chd`; también se conservan los archivos intermedios y de verificación.
+El aplicador comprueba los originales, extrae los sectores de datos, aplica el parche, crea un CHD y verifica las dos pistas extrayéndolas de nuevo. Los originales no se modifican. Los resultados se llaman `Policenauts (Español) (Disc 1).chd`, `Policenauts (Español) (Disc 2).chd` y `Policenauts (Español) (Disc 3).chd`; también se conservan los archivos intermedios y de verificación.
 
 Configura los tres discos en tu emulador según sus instrucciones para poder cambiarlos cuando el juego lo pida. Conserva tus partidas y usa preferentemente una partida guardada desde el propio juego al cambiar de versión; no se garantiza la compatibilidad de los estados rápidos.
 

@@ -1,48 +1,45 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "state": "EXPERIMENTAL_PRERELEASE_RUNTIME_VALIDATION_REQUIRED",
   "discs": {
     "1": {
       "japanese_track1_bytes": 524338416,
       "japanese_track1_sha256": "956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938",
       "japanese_cooked_sha256": "516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56",
-      "target_cooked_bytes": 469903360,
-      "target_cooked_sha256": "197f65009239fba7a7d682773c85f9411f440edc88170ce5efcedea838aa6303",
-      "patch": "disc1_jp_to_es_v1_3.vcdiff",
-      "patch_sha256": "59ff2b48fa107c2a2e83ac30ea5516fb3ed123a6ba50798a3cb818cd998ac806"
+      "target_cooked_bytes": 476284928,
+      "target_cooked_sha256": "a97c2a5eb68b61c7b2ecebad391d3839f323a2c51bd285a22b8bcb354dc7582f",
+      "patch": "disc1_jp_to_es_v1_4.vcdiff",
+      "patch_sha256": "6420e830aeee4763611f95df5c4b7f9b0486b394840bc87e56fad6c51cab7f5f"
     },
     "2": {
       "japanese_track1_bytes": 560211120,
       "japanese_track1_sha256": "053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc",
       "japanese_cooked_sha256": "1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b",
-      "target_cooked_bytes": 494077952,
-      "target_cooked_sha256": "1b5abe75c6ca11706d378c725ea88cdc32d68cace57288b4be5caa498daef1e8",
-      "patch": "disc2_jp_to_es_v1_3.vcdiff",
-      "patch_sha256": "2f7b2d862695c3ba2f0abc125b6aac6b6cbe119ab0e8b670950c43cc075e32e4"
+      "target_cooked_bytes": 500459520,
+      "target_cooked_sha256": "5f1d188dd9094f07bbd48457a6a5c1b6dfd230fbd73fd18796580f12cc44d746",
+      "patch": "disc2_jp_to_es_v1_4.vcdiff",
+      "patch_sha256": "cd5f31cf5938cf09864e3672d3035d6790b4931e3669469e5117325d1e724044"
     },
     "3": {
       "japanese_track1_bytes": 513533328,
       "japanese_track1_sha256": "bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89",
       "japanese_cooked_sha256": "8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f",
-      "target_cooked_bytes": 453435392,
-      "target_cooked_sha256": "fea82d152950336f1abdef9df04c5541b220282de6879e8a117169bb15849903",
-      "patch": "disc3_jp_to_es_v1_3.vcdiff",
-      "patch_sha256": "55e41f679a948b25955ef8bc3dc22cfc75daf08d7f6237adea40946ef73a684a"
+      "target_cooked_bytes": 459819008,
+      "target_cooked_sha256": "d4e90adf3bf5ced46f06f2f837ea653724daf8f47043d4bf67ba3ce06ff18c9d",
+      "patch": "disc3_jp_to_es_v1_4.vcdiff",
+      "patch_sha256": "50ecd43732b8d44becea712cadf81b112f289f4ad481b262be41917940ae1871"
     }
   },
   "japanese_audio_bytes": 4812192,
   "japanese_audio_sha256": "4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2",
   "tool_xdelta3_sha256": "732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9",
   "tool_chdman_sha256": "8a74468e3b0879698835b57c3b58e88e5a51e4de73bee6ef755c28530b5b040f",
-  "verification": "Los tres deltas reproducen sus ISO objetivo. Aplicadores PowerShell y Python probados en Windows con el disco 3 japonés, CHD y pistas verificados; Linux y macOS pendientes.",
+  "verification": "Los tres deltas reconstruyeron sus ISO objetivo desde las bases japonesas. Ambos aplicadores se ejecutaron en Windows con el disco 2 japonés y verificaron las dos pistas de sus CHD; Linux y macOS siguen pendientes.",
   "limitations": [
-    "No se ha probado el cambio de disco ni una partida completa.",
-    "Voces y vídeos de discos 2 y 3 verificados estáticamente, sin validación en juego.",
-    "Los enlaces del glosario y la sincronía requieren prueba en juego.",
-    "Los titulares revisados del disco 1 requieren prueba visual.",
-    "El menú gráfico conserva el rótulo Ver 1.0 ESP.",
-    "La demo inicial presenta superposición y texto parcial también observados en la referencia inglesa.",
-    "Una frase de voz del disco 3 requiere contraste con la escena o el japonés."
+    "Las escenas revisadas, el menú EMPS, los enlaces y el cambio de disco requieren prueba visual en juego.",
+    "La posición de fuente usada para ¡ no aparece en los recursos de texto reconocidos, pero pueden existir usos no identificados.",
+    "La demostración inicial presenta solapamiento y texto parcial también observados en la referencia inglesa.",
+    "Los aplicadores para Linux y macOS no se han probado en esos sistemas."
   ],
   "credits": "Policenauts Translation Project; programación: GameZelda, FacundoARG, SaturnAR, Raizing, SkyBladeCloud; traducción: Marc Laidlaw, Raizing, cafe-alpha; gráficos: IlDucci."
 }
