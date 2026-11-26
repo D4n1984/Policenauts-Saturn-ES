@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Aplica el parche de Policenauts Saturn 1.5 en Linux/macOS."""
+"""Aplica el parche de Policenauts Saturn 1.6 en Linux/macOS."""
 import argparse,hashlib,json,re,shutil,subprocess
 from pathlib import Path
 
 HERE=Path(__file__).resolve().parent
 AUDIO_HASH='4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2'
 CONFIG={
- '1':dict(raw_bytes=524338416,raw_sha='956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938',cooked_sha='516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56',patch='disc1_jp_to_es.vcdiff',patch_sha='0a09d382d015dc103796ca8b99a450fea9d0ec4beddf9109b8b395880dd9386e',target_bytes=476891136,target_sha='04f667e51ec4420d1193a44a521fbd0fa15c5eed2b8f85568650c57315f67735'),
- '2':dict(raw_bytes=560211120,raw_sha='053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc',cooked_sha='1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b',patch='disc2_jp_to_es.vcdiff',patch_sha='732978d5e7ca9a13bc8449cde6396f858a9c12906769bdd9705b4c52e4f3bf66',target_bytes=506234880,target_sha='4def11c738cfd6f1a18387cdbe69e28c40c9b02817dda7eaf1a2d050c01f19a7'),
- '3':dict(raw_bytes=513533328,raw_sha='bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89',cooked_sha='8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f',patch='disc3_jp_to_es.vcdiff',patch_sha='7baea41f60791404d592c692877fbe144882cd15bd24e38b4627a1576d864938',target_bytes=459819008,target_sha='85ba4b841029207e7c29c85b66bf2428f55e4ecaad371d0d88e61e77713e7196')}
+ '1':dict(raw_bytes=524338416,raw_sha='956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938',cooked_sha='516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56',patch='disc1_jp_to_es.vcdiff',patch_sha='2308b6b4fcca2c39e2d3a791a9501cae769894fae8dd4461d6909365e9cb9da7',target_bytes=476891136,target_sha='a094ffd7e4e991da3649dd737d51ebe67facc4270e6619a6001337a0b2ef41fe'),
+ '2':dict(raw_bytes=560211120,raw_sha='053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc',cooked_sha='1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b',patch='disc2_jp_to_es.vcdiff',patch_sha='330ccbf552a872d2e0b78cfddc8514dcedb81e1e555cd889d80dd4f9b0285b32',target_bytes=506234880,target_sha='8b722e4f21a5b42058d6c210a1de6309c1212d11fb57af2540662f638e8781de'),
+ '3':dict(raw_bytes=513533328,raw_sha='bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89',cooked_sha='8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f',patch='disc3_jp_to_es.vcdiff',patch_sha='c3e3bffa082ed6b88643666fb793949b455b5f788ab354b71d6be43f6e5f3593',target_bytes=459819008,target_sha='86e9fa28841fb0e296d7d7d92fe5d55559683405385f0b25619dfff09ceb2f4f')}
 def sha(path):
  h=hashlib.sha256()
  with path.open('rb') as f:
@@ -50,7 +50,7 @@ def main():
  out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
  cooked=out/'original_datos_2048.iso';print('Extrayendo sectores del original...',flush=True);extract(track1,cooked)
  if sha(cooked)!=c['cooked_sha']:raise ValueError('La pista extraída no coincide.')
- target=out/f'Policenauts_ES_v1.5_Disc{a.disc}.iso'
+ target=out/f'Policenauts_ES_v1.6_Disc{a.disc}.iso'
  command([a.xdelta,'-d','-s',str(cooked),str(patch),str(target)],out,'xdelta')
  if target.stat().st_size!=c['target_bytes'] or sha(target)!=c['target_sha']:raise ValueError('La ISO generada no coincide.')
  audio=out/'audio.bin';shutil.copyfile(track2,audio)
@@ -63,7 +63,7 @@ def main():
  command([a.chdman,'extractcd','-i',str(chd),'-o',str(check_cue),'-sb'],out,'chd_extract')
  v1,v2=cue_files(check_cue,'MODE1/2048')
  if sha(v1)!=c['target_sha'] or sha(v2)!=AUDIO_HASH:raise ValueError('Las pistas extraídas del CHD no coinciden.')
- manifest=dict(version='1.5',disco=a.disc,original_track1_sha256=c['raw_sha'],original_audio_sha256=AUDIO_HASH,patch_sha256=c['patch_sha'],target_iso_sha256=c['target_sha'],output_chd_sha256=sha(chd),chd_verify=True,chd_tracks_verified=True,gameplay_validation='no acreditada')
+ manifest=dict(version='1.6',disco=a.disc,original_track1_sha256=c['raw_sha'],original_audio_sha256=AUDIO_HASH,patch_sha256=c['patch_sha'],target_iso_sha256=c['target_sha'],output_chd_sha256=sha(chd),chd_verify=True,chd_tracks_verified=True,gameplay_validation='no acreditada')
  (out/'manifiesto.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
  print('CHD creado y pistas verificadas:',chd)
 if __name__=='__main__':main()

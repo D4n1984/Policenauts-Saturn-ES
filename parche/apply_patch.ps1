@@ -9,9 +9,9 @@ $ErrorActionPreference='Stop'
 $audioHash='4227a2f565934ddb8e92635c41f58eb39655231f107cba518e79220e33fd1ee2'
 $xdeltaHash='732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9'
 $configs=@{
- '1'=@{ RawSize=524338416L; RawHash='956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938'; CookedHash='516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56'; Patch='disc1_jp_to_es.vcdiff'; PatchHash='0a09d382d015dc103796ca8b99a450fea9d0ec4beddf9109b8b395880dd9386e'; TargetSize=476891136L; TargetHash='04f667e51ec4420d1193a44a521fbd0fa15c5eed2b8f85568650c57315f67735' }
- '2'=@{ RawSize=560211120L; RawHash='053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc'; CookedHash='1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b'; Patch='disc2_jp_to_es.vcdiff'; PatchHash='732978d5e7ca9a13bc8449cde6396f858a9c12906769bdd9705b4c52e4f3bf66'; TargetSize=506234880L; TargetHash='4def11c738cfd6f1a18387cdbe69e28c40c9b02817dda7eaf1a2d050c01f19a7' }
- '3'=@{ RawSize=513533328L; RawHash='bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89'; CookedHash='8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f'; Patch='disc3_jp_to_es.vcdiff'; PatchHash='7baea41f60791404d592c692877fbe144882cd15bd24e38b4627a1576d864938'; TargetSize=459819008L; TargetHash='85ba4b841029207e7c29c85b66bf2428f55e4ecaad371d0d88e61e77713e7196' }
+ '1'=@{ RawSize=524338416L; RawHash='956b9e06ef0e622d04aa2a1aabbebe305f06c7cefc87485d7e67cd6af3ee6938'; CookedHash='516ad090242df694becad079c1f187294df7b1c3259ef2b5b9405217cf70fb56'; Patch='disc1_jp_to_es.vcdiff'; PatchHash='2308b6b4fcca2c39e2d3a791a9501cae769894fae8dd4461d6909365e9cb9da7'; TargetSize=476891136L; TargetHash='a094ffd7e4e991da3649dd737d51ebe67facc4270e6619a6001337a0b2ef41fe' }
+ '2'=@{ RawSize=560211120L; RawHash='053d1b3111992d826d8c5db0feb6684e82fc3e8cc5f0f68d626366652ccaa9fc'; CookedHash='1669ad792a25bade3709a19269c1a104d62e45de4f7849478f5950b17ec86c4b'; Patch='disc2_jp_to_es.vcdiff'; PatchHash='330ccbf552a872d2e0b78cfddc8514dcedb81e1e555cd889d80dd4f9b0285b32'; TargetSize=506234880L; TargetHash='8b722e4f21a5b42058d6c210a1de6309c1212d11fb57af2540662f638e8781de' }
+ '3'=@{ RawSize=513533328L; RawHash='bbe498ebb05d1657faf1d820d8ba24c67f112f335323a4c0fee7b89905c96a89'; CookedHash='8e0eb8a914e541318a6449f4512e9dbea45051dbae909556808adb2db3c6347f'; Patch='disc3_jp_to_es.vcdiff'; PatchHash='c3e3bffa082ed6b88643666fb793949b455b5f788ab354b71d6be43f6e5f3593'; TargetSize=459819008L; TargetHash='86e9fa28841fb0e296d7d7d92fe5d55559683405385f0b25619dfff09ceb2f4f' }
 }
 $config=$configs[$Disc]
 function Hash([string]$Path) { (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant() }
@@ -69,7 +69,7 @@ $cooked=Join-Path $out 'original_datos_2048.iso'
 Write-Host 'Comprobando y extrayendo sectores del disco japonés...'
 [PolicenautsSectorExtractorV15]::Run($track1,$cooked)
 if ((Hash $cooked) -ne $config.CookedHash) { throw 'La extracción de la pista no coincide con el hash esperado.' }
-$target=Join-Path $out ("Policenauts_ES_v1.5_Disc{0}.iso" -f $Disc)
+$target=Join-Path $out ("Policenauts_ES_v1.6_Disc{0}.iso" -f $Disc)
 & $xdelta -d -s $cooked $patch $target
 if ($LASTEXITCODE -ne 0) { throw 'xdelta no pudo aplicar el parche; se conserva la salida parcial.' }
 if ((Get-Item -LiteralPath $target).Length -ne $config.TargetSize -or (Hash $target) -ne $config.TargetHash) { throw 'Los datos generados no coinciden con el hash esperado.' }
@@ -100,6 +100,6 @@ $verifyFiles=[regex]::Matches($verifyContent,'(?im)^\s*FILE\s+"(?<name>[^"]+)"\s
 if ($verifyFiles.Count -ne 2 -or $verifyContent -notmatch '(?im)^\s*TRACK\s+01\s+MODE1/2048\s*$' -or $verifyContent -notmatch '(?im)^\s*TRACK\s+02\s+AUDIO\s*$' -or $verifyContent -notmatch '(?im)^\s*INDEX\s+00\s+00:00:00\s*$' -or $verifyContent -notmatch '(?im)^\s*INDEX\s+01\s+00:02:00\s*$') { throw 'La estructura del CHD extraído no coincide.' }
 $v1=Join-Path $verify $verifyFiles[0].Groups['name'].Value;$v2=Join-Path $verify $verifyFiles[1].Groups['name'].Value
 if ((Hash $v1) -ne $config.TargetHash -or (Hash $v2) -ne $audioHash) { throw 'Las pistas extraídas del CHD no coinciden.' }
-$manifest=[ordered]@{ version='1.5'; disco=$Disc; original_track1_sha256=$config.RawHash; original_audio_sha256=$audioHash; patch_sha256=$config.PatchHash; target_iso_sha256=$config.TargetHash; output_chd_sha256=(Hash $chd); chd_verify=$true; chd_tracks_verified=$true; gameplay_validation='no acreditada' }
+$manifest=[ordered]@{ version='1.6'; disco=$Disc; original_track1_sha256=$config.RawHash; original_audio_sha256=$audioHash; patch_sha256=$config.PatchHash; target_iso_sha256=$config.TargetHash; output_chd_sha256=(Hash $chd); chd_verify=$true; chd_tracks_verified=$true; gameplay_validation='no acreditada' }
 $manifest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $out 'manifiesto.json') -Encoding UTF8
 Write-Host "CHD creado y pistas verificadas: $chd"
